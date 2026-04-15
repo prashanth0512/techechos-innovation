@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Techechos Innovation Admin Dashboard"/>
+<title>Dashboard — Techechos Innovation</title>
+<link rel="stylesheet" href="../shared/shared.css"/>
+<link rel="stylesheet" href="./dashboard.css"/>
+  <link rel="stylesheet" href="../navigation/header.css"/>
+  <link rel="stylesheet" href="../navigation/footer.css"/>
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-logo">
+      <img src="../images/logo1.svg" style="width:34px;height:34px;object-fit:contain;" alt="Logo"/>
+      <span>Techechos</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Main</div>
+      <a href="#" class="sidebar-link active" data-page="dashboard"><span class="sidebar-link-icon">📊</span> Dashboard</a>
+      <a href="#" class="sidebar-link" data-page="projects"><span class="sidebar-link-icon">🚀</span> Projects <span class="sidebar-badge">12</span></a>
+      <a href="#" class="sidebar-link" data-page="clients"><span class="sidebar-link-icon">👥</span> Clients</a>
+      <a href="#" class="sidebar-link" data-page="messages"><span class="sidebar-link-icon">💬</span> Messages <span class="sidebar-badge">5</span></a>
+      <div class="sidebar-section-title" style="margin-top:16px">Finance</div>
+      <a href="#" class="sidebar-link" data-page="revenue"><span class="sidebar-link-icon">💰</span> Revenue</a>
+      <a href="#" class="sidebar-link" data-page="invoices"><span class="sidebar-link-icon">🧾</span> Invoices</a>
+      <a href="#" class="sidebar-link" data-page="analytics"><span class="sidebar-link-icon">📈</span> Analytics</a>
+      <div class="sidebar-section-title" style="margin-top:16px">Content</div>
+      <a href="#" class="sidebar-link" data-page="blog"><span class="sidebar-link-icon">✍️</span> Blog Posts</a>
+      <a href="#" class="sidebar-link" data-page="jobs"><span class="sidebar-link-icon">💼</span> Job Listings</a>
+      <div class="sidebar-section-title" style="margin-top:16px">System</div>
+      <a href="#" class="sidebar-link" data-page="settings"><span class="sidebar-link-icon">⚙️</span> Settings</a>
+      <a href="#" class="sidebar-link" data-page="security"><span class="sidebar-link-icon">🔒</span> Security</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">Y</div>
+        <div><div class="sidebar-user-name">Yashrub Unnisa</div><div class="sidebar-user-role">Managing Director</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="admin-main" id="adminMain">
+    <header class="admin-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">☰</button>
+      <div class="admin-search">
+        <span>🔍</span>
+        <input type="text" placeholder="Search projects, clients, invoices..."/>
+      </div>
+      <div class="admin-topbar-actions">
+        <div class="topbar-icon-btn" title="Notifications">🔔<span class="topbar-notif"></span></div>
+        <div class="topbar-icon-btn" title="Messages">💬</div>
+        <div class="topbar-user">
+          <div class="topbar-user-avatar">Y</div>
+          <span class="topbar-user-name">Yashrub U.</span>
+        </div>
+      </div>
+    </header>
+    <main class="admin-content" id="adminContent">
+
+      <div class="page-section" id="page-dashboard">
+        <div class="admin-page-title">Dashboard</div>
+        <div class="admin-page-sub">Welcome back, Yashrub. Here's what's happening at Techechos today.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">💰</div><span class="kpi-trend up">↑ 18%</span></div>
+            <div class="kpi-value">₹42L</div><div class="kpi-label">Monthly Revenue</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">🚀</div><span class="kpi-trend up">↑ 3</span></div>
+            <div class="kpi-value">24</div><div class="kpi-label">Active Projects</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">👥</div><span class="kpi-trend up">↑ 5</span></div>
+            <div class="kpi-value">48</div><div class="kpi-label">Total Clients</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-top"><div class="kpi-icon" style="background:rgba(255,107,53,0.12)">⭐</div><span class="kpi-trend up">↑ 0.2</span></div>
+            <div class="kpi-value">98%</div><div class="kpi-label">Satisfaction Rate</div>
+          </div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Monthly Revenue</h4><a href="#">View report</a></div>
+            <div class="admin-card-body">
+              <div class="chart-bars" id="chartBars">
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="60"></div></div><span class="chart-label">Aug</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="75"></div></div><span class="chart-label">Sep</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="55"></div></div><span class="chart-label">Oct</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="90"></div></div><span class="chart-label">Nov</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="70"></div></div><span class="chart-label">Dec</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="85"></div></div><span class="chart-label">Jan</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="100"></div></div><span class="chart-label">Feb</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar" data-h="92"></div></div><span class="chart-label">Mar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Services Breakdown</h4><a href="#">Details</a></div>
+            <div class="admin-card-body" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+              <svg class="pie-chart" viewBox="0 0 120 120" width="130" height="130">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#ede9fe" stroke-width="20"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="url(#g1)" stroke-width="20" stroke-dasharray="110 204" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#f97316" stroke-width="20" stroke-dasharray="60 254" stroke-dashoffset="-110" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#22c55e" stroke-width="20" stroke-dasharray="40 274" stroke-dashoffset="-170" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="30 284" stroke-dashoffset="-210" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B2FBE"/><stop offset="100%" stop-color="#C24080"/></defs>
+              </svg>
+              <div class="pie-legend">
+                <div class="pie-leg-item"><span style="background:var(--grad)"></span>Web Design (35%)</div>
+                <div class="pie-leg-item"><span style="background:#f97316"></span>Mobile Apps (19%)</div>
+                <div class="pie-leg-item"><span style="background:#22c55e"></span>Testing (13%)</div>
+                <div class="pie-leg-item"><span style="background:#3b82f6"></span>Cloud (10%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Active Projects</h4><a href="#" data-page="projects" class="nav-link-btn">View all</a></div>
+            <div class="admin-card-body" style="padding:0">
+              <table class="data-table">
+                <thead><tr><th>Client</th><th>Project</th><th>Deadline</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>FinStack India</strong></td><td>Cloud-Native ERP</td><td>Apr 15</td><td><span class="status-badge active">Active</span></td></tr>
+                  <tr><td><strong>ShopNova</strong></td><td>AI Recommendation Engine</td><td>May 1</td><td><span class="status-badge active">Active</span></td></tr>
+                  <tr><td><strong>Veridian Labs</strong></td><td>Web3 NFT Marketplace</td><td>Apr 30</td><td><span class="status-badge pending">In Review</span></td></tr>
+                  <tr><td><strong>MediCore Health</strong></td><td>Patient Portal App</td><td>Jun 20</td><td><span class="status-badge pending">Planning</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Recent Activity</h4><a href="#">View all</a></div>
+            <div class="admin-card-body">
+              <div class="activity-list">
+                <div class="activity-item"><div class="activity-dot"></div><div><div class="activity-text"><strong>FinStack India</strong> milestone delivered.</div><div class="activity-time">2 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot"></div><div><div class="activity-text">New inquiry from <strong>ShopNova</strong> — AI RFP.</div><div class="activity-time">5 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot"></div><div><div class="activity-text">Invoice #1042 paid by <strong>Veridian Labs</strong>.</div><div class="activity-time">Yesterday</div></div></div>
+                <div class="activity-item"><div class="activity-dot"></div><div><div class="activity-text"><strong>Priya Rao</strong> published new blog post.</div><div class="activity-time">2 days ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot"></div><div><div class="activity-text">Cloud migration complete for <strong>DataSmith Co</strong>.</div><div class="activity-time">3 days ago</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card" style="margin-bottom:24px;">
+          <div class="admin-card-header">
+            <h4>Website Enquiries &amp; Traffic Trend</h4>
+            <div style="display:flex;gap:16px;font-size:0.8rem;">
+              <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:3px;background:var(--grad);border-radius:2px;display:inline-block;"></span>Enquiries</span>
+              <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:3px;background:#22c55e;border-radius:2px;display:inline-block;"></span>Visits (K)</span>
+            </div>
+          </div>
+          <div class="admin-card-body" style="padding:20px 22px 10px;">
+            <div class="line-chart-wrap">
+              <div class="line-chart-grid">
+                <span>50</span><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
+              </div>
+              <div class="line-chart-area">
+                <svg viewBox="0 0 700 160" preserveAspectRatio="none" style="width:100%;height:160px;">
+                  <defs>
+                    <linearGradient id="lineGrad1" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#7B2FBE"/>
+                      <stop offset="100%" stop-color="#C24080"/>
+                    </linearGradient>
+                    <linearGradient id="fillGrad1" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#7B2FBE" stop-opacity="0.18"/>
+                      <stop offset="100%" stop-color="#7B2FBE" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="fillGrad2" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+                      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="32" x2="700" y2="32" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="0" y1="64" x2="700" y2="64" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="0" y1="96" x2="700" y2="96" stroke="#f1f5f9" stroke-width="1"/>
+                  <line x1="0" y1="128" x2="700" y2="128" stroke="#f1f5f9" stroke-width="1"/>
+                  <polygon points="0,128 87,102 175,115 262,83 350,70 437,55 525,45 612,35 700,25 700,160 0,160" fill="url(#fillGrad1)"/>
+                  <polyline points="0,128 87,102 175,115 262,83 350,70 437,55 525,45 612,35 700,25" fill="none" stroke="url(#lineGrad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-line" id="line-enquiry"/>
+                  <circle cx="0" cy="128" r="4" fill="#7B2FBE"/><circle cx="87" cy="102" r="4" fill="#7B2FBE"/>
+                  <circle cx="175" cy="115" r="4" fill="#7B2FBE"/><circle cx="262" cy="83" r="4" fill="#7B2FBE"/>
+                  <circle cx="350" cy="70" r="4" fill="#7B2FBE"/><circle cx="437" cy="55" r="4" fill="#7B2FBE"/>
+                  <circle cx="525" cy="45" r="4" fill="#7B2FBE"/><circle cx="612" cy="35" r="4" fill="#7B2FBE"/>
+                  <circle cx="700" cy="25" r="4" fill="#7B2FBE"/>
+                  <polygon points="0,138 87,120 175,125 262,105 350,95 437,80 525,68 612,55 700,42 700,160 0,160" fill="url(#fillGrad2)"/>
+                  <polyline points="0,138 87,120 175,125 262,105 350,95 437,80 525,68 612,55 700,42" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3" class="svg-line"/>
+                  <circle cx="87" cy="120" r="4" fill="#22c55e"/><circle cx="350" cy="95" r="4" fill="#22c55e"/>
+                  <circle cx="612" cy="55" r="4" fill="#22c55e"/><circle cx="700" cy="42" r="4" fill="#22c55e"/>
+                </svg>
+                <div class="line-chart-labels">
+                  <span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-grid-2" style="margin-bottom:24px;">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Project Progress</h4><a href="#" data-page="projects" class="nav-link-btn">All Projects</a></div>
+            <div class="admin-card-body">
+              <div class="progress-list">
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>FinStack India</strong> — Cloud ERP</span><span>78%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:78%;background:var(--grad)"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>ShopNova</strong> — AI Engine</span><span>62%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:62%;background:#3b82f6"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>Veridian Labs</strong> — NFT Market</span><span>90%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:90%;background:#22c55e"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>MediCore Health</strong> — Portal App</span><span>25%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:25%;background:#f97316"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>RetailX</strong> — Website Redesign</span><span>50%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:50%;background:#a855f7"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span><strong>EduTech Pro</strong> — LMS</span><span>15%</span></div>
+                  <div class="progress-bar-wrap"><div class="progress-bar" style="width:15%;background:#f59e0b"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Team Members</h4><a href="#" data-page="settings" class="nav-link-btn">Manage</a></div>
+            <div class="admin-card-body" style="padding:0">
+              <div class="team-list">
+                <div class="team-row"><div class="team-av" style="background:var(--grad)">Y</div><div class="team-info-col"><div class="team-name">Yashrub Unnisa</div><div class="team-role">Managing Director</div></div><span class="status-badge active">Online</span></div>
+                <div class="team-row"><div class="team-av" style="background:#f97316">C</div><div class="team-info-col"><div class="team-name">Chinni Parvathala</div><div class="team-role">HR Manager</div></div><span class="status-badge active">Online</span></div>
+                <div class="team-row"><div class="team-av" style="background:#22c55e">S</div><div class="team-info-col"><div class="team-name">Saritha Anumandala</div><div class="team-role">Admin</div></div><span class="status-badge pending">Away</span></div>
+                <div class="team-row"><div class="team-av" style="background:#3b82f6">M</div><div class="team-info-col"><div class="team-name">Manikanta Jada</div><div class="team-role">Team Lead</div></div><span class="status-badge active">Online</span></div>
+                <div class="team-row"><div class="team-av" style="background:#a855f7">P</div><div class="team-info-col"><div class="team-name">Priya Rao</div><div class="team-role">CTO</div></div><span class="status-badge active">Online</span></div>
+                <div class="team-row"><div class="team-av" style="background:#64748b">S</div><div class="team-info-col"><div class="team-name">Sanjay Kapoor</div><div class="team-role">Head of Engineering</div></div><span class="status-badge inactive">Offline</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card" style="margin-bottom:0;">
+          <div class="admin-card-header"><h4>Top Clients by Revenue</h4><a href="#" data-page="clients" class="nav-link-btn">View all clients</a></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Client</th><th>Industry</th><th>Projects</th><th>Total Revenue</th><th>Last Activity</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><strong>DataSmith Co</strong></td><td>Data Analytics</td><td>4</td><td>₹70L</td><td>3 days ago</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>FinStack India</strong></td><td>FinTech</td><td>3</td><td>₹52L</td><td>2 hours ago</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>ShopNova</strong></td><td>E-Commerce</td><td>2</td><td>₹38L</td><td>5 hours ago</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>MediCore Health</strong></td><td>Healthcare</td><td>2</td><td>₹22L</td><td>Yesterday</td><td><span class="status-badge pending">Planning</span></td></tr>
+                <tr><td><strong>Veridian Labs</strong></td><td>Web3 / DeFi</td><td>1</td><td>₹14L</td><td>Yesterday</td><td><span class="status-badge pending">In Review</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-projects">
+        <div class="admin-page-title">Projects</div>
+        <div class="admin-page-sub">Manage all active and completed projects.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">🚀</div><span class="kpi-trend up">↑ 3</span></div><div class="kpi-value">12</div><div class="kpi-label">Active Projects</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">✅</div><span class="kpi-trend up">↑ 8</span></div><div class="kpi-value">188</div><div class="kpi-label">Completed</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(245,158,11,0.12)">⏳</div><span class="kpi-trend down">↓ 1</span></div><div class="kpi-value">4</div><div class="kpi-label">In Review</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">👨‍💻</div><span class="kpi-trend up">↑ 5</span></div><div class="kpi-value">120+</div><div class="kpi-label">Engineers Deployed</div></div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>All Projects</h4><button class="btn btn-sm btn-primary" style="padding:7px 16px;font-size:0.8rem">+ New Project</button></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Client</th><th>Project Name</th><th>Service</th><th>Team</th><th>Deadline</th><th>Budget</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FinStack India</strong></td><td>Cloud-Native ERP</td><td>Cloud</td><td>6 engineers</td><td>Apr 15, 2025</td><td>₹18L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>ShopNova</strong></td><td>AI Recommendation Engine</td><td>AI/ML</td><td>4 engineers</td><td>May 1, 2025</td><td>₹24L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>Veridian Labs</strong></td><td>Web3 NFT Marketplace</td><td>Blockchain</td><td>3 engineers</td><td>Apr 30, 2025</td><td>₹14L</td><td><span class="status-badge pending">In Review</span></td></tr>
+                <tr><td><strong>DataSmith Co</strong></td><td>Multi-Cloud Migration</td><td>Cloud</td><td>5 engineers</td><td>Completed</td><td>₹20L</td><td><span class="status-badge active">Done</span></td></tr>
+                <tr><td><strong>MediCore Health</strong></td><td>Patient Portal App</td><td>Mobile</td><td>4 engineers</td><td>Jun 20, 2025</td><td>₹12L</td><td><span class="status-badge pending">Planning</span></td></tr>
+                <tr><td><strong>RetailX</strong></td><td>E-commerce Website Redesign</td><td>Web Design</td><td>3 engineers</td><td>May 15, 2025</td><td>₹8L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>EduTech Pro</strong></td><td>Learning Management System</td><td>Web Dev</td><td>5 engineers</td><td>Jul 10, 2025</td><td>₹16L</td><td><span class="status-badge pending">Planning</span></td></tr>
+                <tr><td><strong>HealthPlus</strong></td><td>Medical Coding Automation</td><td>Medical</td><td>2 engineers</td><td>Jun 5, 2025</td><td>₹10L</td><td><span class="status-badge active">Active</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-clients">
+        <div class="admin-page-title">Clients</div>
+        <div class="admin-page-sub">Complete client directory and contact overview.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">👥</div><span class="kpi-trend up">↑ 5</span></div><div class="kpi-value">48</div><div class="kpi-label">Total Clients</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">🌍</div><span class="kpi-trend up">↑ 2</span></div><div class="kpi-value">12</div><div class="kpi-label">Countries</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">🔄</div><span class="kpi-trend up">↑ 4%</span></div><div class="kpi-value">82%</div><div class="kpi-label">Retention Rate</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(255,107,53,0.12)">⭐</div><span class="kpi-trend up">↑ 0.1</span></div><div class="kpi-value">4.9</div><div class="kpi-label">Avg. Rating</div></div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>Client Directory</h4><button class="btn btn-sm btn-primary" style="padding:7px 16px;font-size:0.8rem">+ Add Client</button></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Company</th><th>Industry</th><th>Contact</th><th>Location</th><th>Projects</th><th>Total Value</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FinStack India</strong></td><td>FinTech</td><td>Rahul Mehta</td><td>Mumbai</td><td>3</td><td>₹52L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>ShopNova</strong></td><td>E-Commerce</td><td>Sana Al-Rashid</td><td>Dubai</td><td>2</td><td>₹38L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>Veridian Labs</strong></td><td>Web3 / DeFi</td><td>James Okonkwo</td><td>Lagos</td><td>1</td><td>₹14L</td><td><span class="status-badge pending">In Review</span></td></tr>
+                <tr><td><strong>DataSmith Co</strong></td><td>Data Analytics</td><td>Meera Singh</td><td>Bengaluru</td><td>4</td><td>₹70L</td><td><span class="status-badge active">Active</span></td></tr>
+                <tr><td><strong>MediCore Health</strong></td><td>Healthcare</td><td>Dr. Rao</td><td>Hyderabad</td><td>2</td><td>₹22L</td><td><span class="status-badge pending">Planning</span></td></tr>
+                <tr><td><strong>RetailX</strong></td><td>Retail</td><td>Ankit Sharma</td><td>Delhi</td><td>1</td><td>₹8L</td><td><span class="status-badge active">Active</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-messages">
+        <div class="admin-page-title">Messages</div>
+        <div class="admin-page-sub">Inbox — 5 unread messages.</div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>Inbox</h4><a href="#">Mark all read</a></div>
+          <div class="admin-card-body" style="padding:0">
+            <div class="msg-list">
+              <div class="msg-item unread"><div class="msg-avatar" style="background:var(--grad)">R</div><div class="msg-body"><div class="msg-name">Rahul Mehta <span class="msg-time">10:32 AM</span></div><div class="msg-preview">Can we schedule the ERP demo for next Thursday? The team is ready to review the latest milestone.</div></div></div>
+              <div class="msg-item unread"><div class="msg-avatar" style="background:#f97316">S</div><div class="msg-body"><div class="msg-name">Sana Al-Rashid <span class="msg-time">9:15 AM</span></div><div class="msg-preview">The AI module results look fantastic! 40% conversion lift. Can we expand scope to include recommendation emails?</div></div></div>
+              <div class="msg-item unread"><div class="msg-avatar" style="background:#22c55e">J</div><div class="msg-body"><div class="msg-name">James Okonkwo <span class="msg-time">Yesterday</span></div><div class="msg-preview">Audit report received. We have 2 minor issues to fix before mainnet. Will share details in the call.</div></div></div>
+              <div class="msg-item unread"><div class="msg-avatar" style="background:#3b82f6">M</div><div class="msg-body"><div class="msg-name">Meera Singh <span class="msg-time">Yesterday</span></div><div class="msg-preview">Cloud migration completed successfully! All 6 services are now live on GCP. Invoice approved.</div></div></div>
+              <div class="msg-item unread"><div class="msg-avatar" style="background:#a855f7">A</div><div class="msg-body"><div class="msg-name">Ankit Sharma <span class="msg-time">2 days ago</span></div><div class="msg-preview">Loved the new homepage design! Can we add a product video to the hero section?</div></div></div>
+              <div class="msg-item"><div class="msg-avatar" style="background:#64748b">D</div><div class="msg-body"><div class="msg-name">Dr. Rao <span class="msg-time">3 days ago</span></div><div class="msg-preview">SOW for Phase 2 of Patient Portal is approved. Please begin the sprint planning process.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-revenue">
+        <div class="admin-page-title">Revenue</div>
+        <div class="admin-page-sub">Financial overview — FY 2024–25.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">💰</div><span class="kpi-trend up">↑ 18%</span></div><div class="kpi-value">₹42L</div><div class="kpi-label">This Month</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">📅</div><span class="kpi-trend up">↑ 22%</span></div><div class="kpi-value">₹4.8Cr</div><div class="kpi-label">Annual Revenue</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">🧾</div><span class="kpi-trend up">↑ 3</span></div><div class="kpi-value">₹28L</div><div class="kpi-label">Pending Invoices</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(255,107,53,0.12)">📊</div><span class="kpi-trend up">↑ 5%</span></div><div class="kpi-value">68%</div><div class="kpi-label">Profit Margin</div></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Monthly Revenue (₹ Lakhs)</h4><a href="#">Export</a></div>
+            <div class="admin-card-body">
+              <div class="chart-bars">
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="60"></div></div><span class="chart-label">Aug</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="75"></div></div><span class="chart-label">Sep</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="55"></div></div><span class="chart-label">Oct</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="90"></div></div><span class="chart-label">Nov</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="70"></div></div><span class="chart-label">Dec</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="85"></div></div><span class="chart-label">Jan</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="100"></div></div><span class="chart-label">Feb</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar rev-bar" data-h="92"></div></div><span class="chart-label">Mar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Revenue by Service</h4><a href="#">Details</a></div>
+            <div class="admin-card-body" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+              <svg viewBox="0 0 120 120" width="130" height="130">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#ede9fe" stroke-width="20"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="url(#g2)" stroke-width="20" stroke-dasharray="110 204" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#f97316" stroke-width="20" stroke-dasharray="60 254" stroke-dashoffset="-110" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#22c55e" stroke-width="20" stroke-dasharray="40 274" stroke-dashoffset="-170" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="30 284" stroke-dashoffset="-210" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7B2FBE"/><stop offset="100%" stop-color="#C24080"/></defs>
+              </svg>
+              <div class="pie-legend">
+                <div class="pie-leg-item"><span style="background:var(--grad)"></span>Web Design (35%)</div>
+                <div class="pie-leg-item"><span style="background:#f97316"></span>Mobile Apps (19%)</div>
+                <div class="pie-leg-item"><span style="background:#22c55e"></span>Testing (13%)</div>
+                <div class="pie-leg-item"><span style="background:#3b82f6"></span>Cloud (10%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-invoices">
+        <div class="admin-page-title">Invoices</div>
+        <div class="admin-page-sub">Track all billing and payment status.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">✅</div><span class="kpi-trend up">+12</span></div><div class="kpi-value">84</div><div class="kpi-label">Paid Invoices</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(245,158,11,0.12)">⏳</div><span class="kpi-trend down">5 pending</span></div><div class="kpi-value">₹28L</div><div class="kpi-label">Pending Amount</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(239,68,68,0.12)">⚠️</div><span class="kpi-trend down">2 overdue</span></div><div class="kpi-value">₹6L</div><div class="kpi-label">Overdue</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">💰</div><span class="kpi-trend up">↑ 18%</span></div><div class="kpi-value">₹4.2Cr</div><div class="kpi-label">Total Billed YTD</div></div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>Invoice List</h4><button class="btn btn-sm btn-primary" style="padding:7px 16px;font-size:0.8rem">+ New Invoice</button></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>#</th><th>Client</th><th>Service</th><th>Amount</th><th>Date</th><th>Due</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>#1048</td><td>FinStack India</td><td>Cloud ERP — Sprint 3</td><td>₹6L</td><td>Mar 10</td><td>Mar 25</td><td><span class="status-badge pending">Pending</span></td></tr>
+                <tr><td>#1047</td><td>ShopNova</td><td>AI Module — Phase 2</td><td>₹8L</td><td>Mar 5</td><td>Mar 20</td><td><span class="status-badge active">Paid</span></td></tr>
+                <tr><td>#1046</td><td>DataSmith Co</td><td>Cloud Migration Final</td><td>₹5L</td><td>Feb 28</td><td>Mar 14</td><td><span class="status-badge active">Paid</span></td></tr>
+                <tr><td>#1045</td><td>RetailX</td><td>Web Design Phase 1</td><td>₹3L</td><td>Feb 20</td><td>Mar 7</td><td><span class="status-badge inactive">Overdue</span></td></tr>
+                <tr><td>#1044</td><td>Veridian Labs</td><td>Smart Contract Audit</td><td>₹4L</td><td>Feb 15</td><td>Mar 1</td><td><span class="status-badge active">Paid</span></td></tr>
+                <tr><td>#1043</td><td>MediCore Health</td><td>Medical Coding Setup</td><td>₹2.5L</td><td>Feb 10</td><td>Feb 25</td><td><span class="status-badge inactive">Overdue</span></td></tr>
+                <tr><td>#1042</td><td>Veridian Labs</td><td>NFT Marketplace Sprint 2</td><td>₹4.5L</td><td>Feb 5</td><td>Feb 20</td><td><span class="status-badge active">Paid</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-analytics">
+        <div class="admin-page-title">Analytics</div>
+        <div class="admin-page-sub">Performance insights across all services and teams.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">📈</div><span class="kpi-trend up">↑ 12%</span></div><div class="kpi-value">94%</div><div class="kpi-label">On-time Delivery</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">🔄</div><span class="kpi-trend up">↑ 8%</span></div><div class="kpi-value">82%</div><div class="kpi-label">Client Retention</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">🧠</div><span class="kpi-trend up">↑ 5</span></div><div class="kpi-value">47</div><div class="kpi-label">Sprints Completed</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(255,107,53,0.12)">🐛</div><span class="kpi-trend up">↓ 30%</span></div><div class="kpi-value">0.8%</div><div class="kpi-label">Bug Rate</div></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Team Performance (Sprints/Month)</h4><a href="#">Export</a></div>
+            <div class="admin-card-body">
+              <div class="chart-bars">
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="70"></div></div><span class="chart-label">Aug</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="80"></div></div><span class="chart-label">Sep</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="65"></div></div><span class="chart-label">Oct</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="95"></div></div><span class="chart-label">Nov</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="75"></div></div><span class="chart-label">Dec</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="88"></div></div><span class="chart-label">Jan</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="100"></div></div><span class="chart-label">Feb</span></div>
+                <div class="chart-bar-col"><div class="chart-bar-wrap"><div class="chart-bar ana-bar" data-h="94"></div></div><span class="chart-label">Mar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Project Status Distribution</h4></div>
+            <div class="admin-card-body" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+              <svg viewBox="0 0 120 120" width="130" height="130">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#ede9fe" stroke-width="20"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#22c55e" stroke-width="20" stroke-dasharray="120 194" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#f97316" stroke-width="20" stroke-dasharray="70 244" stroke-dashoffset="-120" transform="rotate(-90 60 60)"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="24 290" stroke-dashoffset="-190" transform="rotate(-90 60 60)"/>
+              </svg>
+              <div class="pie-legend">
+                <div class="pie-leg-item"><span style="background:#22c55e"></span>Completed (60%)</div>
+                <div class="pie-leg-item"><span style="background:#f97316"></span>In Progress (35%)</div>
+                <div class="pie-leg-item"><span style="background:#ef4444"></span>Delayed (5%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>Top Performing Services</h4></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Service</th><th>Projects</th><th>Revenue</th><th>Satisfaction</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td>🌐 Web Design</td><td>42</td><td>₹1.8Cr</td><td>⭐ 4.9</td><td><span class="kpi-trend up">↑ 22%</span></td></tr>
+                <tr><td>📱 Mobile Apps</td><td>35</td><td>₹1.4Cr</td><td>⭐ 4.8</td><td><span class="kpi-trend up">↑ 18%</span></td></tr>
+                <tr><td>🧪 Testing Services</td><td>28</td><td>₹0.9Cr</td><td>⭐ 4.9</td><td><span class="kpi-trend up">↑ 30%</span></td></tr>
+                <tr><td>☁️ Cloud Solutions</td><td>22</td><td>₹1.1Cr</td><td>⭐ 4.7</td><td><span class="kpi-trend up">↑ 15%</span></td></tr>
+                <tr><td>�Technical Support</td><td>18</td><td>₹0.6Cr</td><td>⭐ 4.8</td><td><span class="kpi-trend up">↑ 10%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-blog">
+        <div class="admin-page-title">Blog Posts</div>
+        <div class="admin-page-sub">Manage published and draft articles.</div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>All Posts</h4><a href="../Blogs/blogs.html" target="_blank" class="btn btn-sm btn-primary" style="padding:7px 16px;font-size:0.8rem">View Blog</a></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Title</th><th>Author</th><th>Category</th><th>Date</th><th>Views</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>The Rise of LLMs in Enterprise Dev</td><td>Priya Rao</td><td>AI &amp; ML</td><td>Mar 14</td><td>4,280</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>Multi-Cloud Strategy: Avoiding Vendor Lock-In</td><td>Sanjay Kapoor</td><td>Cloud</td><td>Mar 10</td><td>3,140</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>Building Design Systems That Scale</td><td>Nisha Verma</td><td>Design</td><td>Mar 6</td><td>2,870</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>Smart Contract Security: $200M in Hacks</td><td>Arjun Kumar</td><td>Blockchain</td><td>Feb 28</td><td>5,620</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>From 0 to 100K Users: The Growth Engine</td><td>Arjun Kumar</td><td>Startup</td><td>Feb 20</td><td>7,110</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>GitOps in Production: 12 Month Lessons</td><td>Sanjay Kapoor</td><td>DevOps</td><td>Feb 14</td><td>3,450</td><td><span class="status-badge active">Published</span></td></tr>
+                <tr><td>Fine-Tuning LLMs on Domain Data</td><td>Priya Rao</td><td>AI &amp; ML</td><td>Draft</td><td>—</td><td><span class="status-badge pending">Draft</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-jobs">
+        <div class="admin-page-title">Job Listings</div>
+        <div class="admin-page-sub">Active openings and applicant tracking.</div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(123,47,190,0.12)">💼</div><span class="kpi-trend up">+2</span></div><div class="kpi-value">6</div><div class="kpi-label">Open Roles</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(59,130,246,0.12)">📋</div><span class="kpi-trend up">↑ 14</span></div><div class="kpi-value">84</div><div class="kpi-label">Applications</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(34,197,94,0.12)">✅</div><span class="kpi-trend up">+3</span></div><div class="kpi-value">5</div><div class="kpi-label">Hired This Month</div></div>
+          <div class="kpi-card"><div class="kpi-top"><div class="kpi-icon" style="background:rgba(255,107,53,0.12)">⏳</div></div><div class="kpi-value">12d</div><div class="kpi-label">Avg. Time to Hire</div></div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-header"><h4>Open Positions</h4><a href="../Careers/careers.html" target="_blank" class="btn btn-sm btn-primary" style="padding:7px 16px;font-size:0.8rem">View Careers Page</a></div>
+          <div class="admin-card-body" style="padding:0">
+            <table class="data-table">
+              <thead><tr><th>Role</th><th>Department</th><th>Type</th><th>Salary</th><th>Applicants</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Senior Full-Stack Engineer</td><td>Engineering</td><td>Remote</td><td>₹25–40 LPA</td><td>22</td><td><span class="status-badge active">Open</span></td></tr>
+                <tr><td>ML Engineer — LLMs &amp; NLP</td><td>AI/ML</td><td>Remote</td><td>₹30–50 LPA</td><td>18</td><td><span class="status-badge active">Open</span></td></tr>
+                <tr><td>Cloud Infrastructure Engineer</td><td>DevOps</td><td>Remote</td><td>₹20–35 LPA</td><td>14</td><td><span class="status-badge active">Open</span></td></tr>
+                <tr><td>Senior Product Designer</td><td>Design</td><td>Hybrid</td><td>₹18–28 LPA</td><td>16</td><td><span class="status-badge active">Open</span></td></tr>
+                <tr><td>Product Manager</td><td>Product</td><td>Hybrid</td><td>₹22–38 LPA</td><td>10</td><td><span class="status-badge pending">Reviewing</span></td></tr>
+                <tr><td>Blockchain / Solidity Developer</td><td>Blockchain</td><td>Remote</td><td>₹25–45 LPA</td><td>4</td><td><span class="status-badge active">Open</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-settings">
+        <div class="admin-page-title">Settings</div>
+        <div class="admin-page-sub">Manage your account and system preferences.</div>
+        <div class="settings-grid">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Profile Settings</h4></div>
+            <div class="admin-card-body">
+              <div class="settings-row"><label>Full Name</label><input type="text" class="settings-input" value="Yashrub Unnisa"/></div>
+              <div class="settings-row"><label>Role</label><input type="text" class="settings-input" value="Managing Director"/></div>
+              <div class="settings-row"><label>Email</label><input type="email" class="settings-input" value="yashrub@techechos.com"/></div>
+              <div class="settings-row"><label>Phone</label><input type="text" class="settings-input" value="+91 98765 43210"/></div>
+              <button class="btn btn-primary" style="margin-top:8px">Save Changes</button>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Company Info</h4></div>
+            <div class="admin-card-body">
+              <div class="settings-row"><label>Company</label><input type="text" class="settings-input" value="Techechos Innovation"/></div>
+              <div class="settings-row"><label>Website</label><input type="text" class="settings-input" value="www.techechos.com"/></div>
+              <div class="settings-row"><label>Location</label><input type="text" class="settings-input" value="Hyderabad, India"/></div>
+              <div class="settings-row"><label>Timezone</label><input type="text" class="settings-input" value="IST (UTC+5:30)"/></div>
+              <button class="btn btn-primary" style="margin-top:8px">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section hidden" id="page-security">
+        <div class="admin-page-title">Security</div>
+        <div class="admin-page-sub">Manage password, 2FA, and login sessions.</div>
+        <div class="settings-grid">
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Change Password</h4></div>
+            <div class="admin-card-body">
+              <div class="settings-row"><label>Current Password</label><input type="password" class="settings-input" placeholder="••••••••"/></div>
+              <div class="settings-row"><label>New Password</label><input type="password" class="settings-input" placeholder="••••••••"/></div>
+              <div class="settings-row"><label>Confirm Password</label><input type="password" class="settings-input" placeholder="••••••••"/></div>
+              <button class="btn btn-primary" style="margin-top:8px">Update Password</button>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header"><h4>Active Sessions</h4></div>
+            <div class="admin-card-body">
+              <div class="activity-list">
+                <div class="activity-item"><div class="activity-dot" style="background:#22c55e"></div><div><div class="activity-text"><strong>Chrome — Windows 11</strong> (Current)</div><div class="activity-time">Hyderabad · Now</div></div></div>
+                <div class="activity-item"><div class="activity-dot" style="background:#94a3b8"></div><div><div class="activity-text"><strong>Safari — iPhone 15</strong></div><div class="activity-time">Hyderabad · 2 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot" style="background:#94a3b8"></div><div><div class="activity-text"><strong>Chrome — MacBook Pro</strong></div><div class="activity-time">Mumbai · Yesterday</div></div></div>
+              </div>
+              <button class="btn btn-sm btn-outline-purple" style="margin-top:14px;width:100%;justify-content:center">Revoke All Other Sessions</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+<script src="../shared/shared.js"></script>
+<script src="./dashboard.js"></script>
+<script src="../navigation/script.js"></script>
+</body>
+</html>
